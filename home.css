@@ -1,0 +1,253 @@
+
+* {
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+ color: white;
+ position: relative;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+.loading {
+ height: 0px;
+ width: 100vw;
+ background-color: rgba(2,161,146,255);
+ animation: load .6s ease-in-out;
+}
+
+.container {
+ min-height: 100vh;
+ width: 100vw;
+}
+
+#home *{
+ z-index: 8;
+}
+
+#home .home {
+ height: 100vh;
+ width: 100vw;
+ background-image: url('/images/bgtj.jpg');
+ background-repeat: no-repeat;
+ background-position: center center;
+ background-size: cover;
+}
+
+#home .home::after {
+ content: '';
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ top: 0px;
+ background-color: rgb(30,30,30);
+ opacity: .45;
+}
+
+#home .home .vnav h2 {
+ margin: 25px;
+ color: rgba(2,161,146,255);
+ font-size: 1rem;
+ z-index: 3;
+}
+
+.ul {
+ height: 100vh;
+ width: 60vw;
+ position: absolute;
+ background-color: rgba(2,161,146,1);
+ border-radius: 10px 0px 0px 10px;
+ top: 0px;
+ right: -100vw;
+ display: flex;
+ justify-content: center;
+ transition: right .2s ease-in-out;
+}
+
+.ul.clicked {
+ right: 0px;
+}
+ 
+.cl {
+ height: 80%;
+ top: 20%;
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+}
+
+.cl li {
+ margin-bottom: 40px;
+ font-size: 1.5rem;
+ text-decoration: none;
+ letter-spacing: .2rem;
+}
+
+.cl li a {
+ text-decoration: none;
+}
+
+.nav {
+ max-height: 9.5vh;
+ width: 100vw;
+ top: 0px;
+ right: 0px;
+ position: fixed;
+ background-attachment: fixed;
+ background-color: rgba(30,30,30,0.45);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ transition: background-color .3s ease;
+}
+
+.menuButton {
+ height: 50px;
+ width: 70px;
+ align-items: center;
+ position: relative;
+ justify-content: center;
+ outline: none;
+ border: none;
+ background-color: transparent;
+ z-index: 6;
+}
+
+.menuButton .bar {
+ height: 3px;
+ width: 35px;
+ position: absolute;
+ background-color: rgba(2,161,146,255);
+}
+
+.menuButton .bar::after,
+.menuButton .bar::before {
+ content: '';
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ left: 0px;
+ background-color: rgba(2,161,146,255);
+ transition: .25s ease;
+}
+
+.menuButton .bar::before {
+ top: 8px;
+}
+
+.menuButton .bar::after {
+ bottom: 8px;
+}
+
+.menuButton.active .bar {
+ background-color: transparent;
+}
+
+.menuButton.active .bar::after,
+.menuButton.active .bar::before {
+ background-color: white;
+ bottom: 0px;
+ transform: rotate(45deg);
+ transition: bottom .1s, transform
+ .2s ease-in-out;
+}
+
+.menuButton.active .bar::before {
+ top: 0px;
+ transform: rotate(-45deg);
+ transition: top .1s, transform .2s ease-in-out;
+}
+
+#home .welSc {
+ height: 90.5vh;
+ width: 100vw;
+ top: 9.5vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 6;
+}
+
+#home .welSc .sc {
+ height: 250px;
+ width: 85vw;
+ margin: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ border-radius: 8px;
+ background-color: rgba(30,30,30,.200);
+ transform: translate(0%,-10%);
+ z-index: 3;
+}
+
+#home .sc h1 {
+ line-height: 2.2rem;
+}
+
+#home .sc h1:nth-child(1) {
+ font-size: 1.4rem;
+}
+
+#home .sc h1:nth-child(2) {
+ display: flex;
+ flex-direction: column;
+ font-size: 2rem;
+ font-weight: 300;
+ text-align: center;
+ font-family: serif;
+}
+
+#home .sc h1:nth-child(3) {
+ font-size: 1.1rem;
+ font-weight: 600;
+}
+
+#home .welSc .sc button {
+ height: 37px;
+ width: 100px;
+ margin: 20px;
+ outline: none;
+ font-size: 1rem;
+ border: 2px solid #e8ebeb;
+ color: rgba(2,161,146,255);
+ background-color: #e8ebeb;
+ border-radius: 3px;
+ transition: .1s ease-in-out;
+ z-index: 3;
+}
+
+#home .welSc .sc button:nth-child(1):focus {
+ border: 2px solid rgba(2,161,146,255);
+ color: #e8ebeb;
+ background-color: rgba(2,161,146,255);
+}
+
+#home .welSc .sc button:nth-child(2) {
+ border: 2px solid rgba(2,161,146,255);
+ color: #e8ebeb;
+ background-color: rgba(2,161,146,255);
+}
+
+#home .welSc .sc button:nth-child(2):focus {
+ background-color: #e8ebeb;
+ color: rgba(2,161,146,255);
+}
+
+h1 span {
+ color: rgba(2,161,146,255);
+}
+
+@keyframes load {
+ 0% {
+  height: 3px;
+  width: 0%;
+ }
+ 100% {
+  width: 100%;
+  height: 3px;
+ }
+}
