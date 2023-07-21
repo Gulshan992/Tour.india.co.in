@@ -30,7 +30,7 @@ html {
 #home .home {
  height: 100vh;
  width: 100vw;
- background-image: url('bgtj.jpg');
+ background-image: url('./bgtj.jpg');
  background-repeat: no-repeat;
  background-position: center center;
  background-size: cover;
